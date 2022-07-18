@@ -5,12 +5,18 @@ export const state = () => ({
   number: '',
   post: '',
   postDetail: '',
-  info: null,
+  cardNumbers: null,
 });
 
 export const mutations = {
   SET_INFO(state, data) {
-    state.info = data;
+    if (data.email) state.email = data.email;
+    if (data.password) state.password = data.password;
+    if (data.name) state.name = data.name;
+    if (data.number) state.number = data.number;
+    if (data.post) state.post = data.post;
+    if (data.postDetail) state.postDetail = data.postDetail;
+    if (data.cardNumbers) state.cardNumbers = data.cardNumbers;
   },
 };
 

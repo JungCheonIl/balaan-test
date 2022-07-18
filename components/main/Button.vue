@@ -9,6 +9,10 @@
   justify-content: center;
   color: #ffffff;
   cursor: not-allowed;
+  &.active {
+    background-color: #dc2121;
+    cursor: pointer;
+  }
 }
 </style>
 <template lang="pug">

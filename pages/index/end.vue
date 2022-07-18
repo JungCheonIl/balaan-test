@@ -20,8 +20,8 @@
 <template lang="pug">
 .end-container
   .box
-    h1.title '000'님#[br]회원가입 되었습니다
-    .label 이메일 :
-    .label 주소 :
-    .label 연락처 :
+    h1.title '{{ $store.state.name }}'님#[br]회원가입 되었습니다
+    .label 이메일 : {{ $store.state.email }}
+    .label 주소 : {{ $store.state.post }} {{ $store.state.postDetail }}
+    .label 연락처 : {{ $store.state.number }}
 </template>
