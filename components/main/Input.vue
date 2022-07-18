@@ -9,6 +9,22 @@
 </style>
 <template lang="pug">
 input.input-container(
+  :value="value"
+  @input="$emit('input', $event.target.value)"
   v-bind="{ ...$attrs, ...$props }",
 )
 </template>
+<script>
+export default {
+  props: {
+    value: {
+      type: String,
+      default: '',
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
+  },
+};
+</script>

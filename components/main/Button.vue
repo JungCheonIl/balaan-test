@@ -12,6 +12,6 @@
 }
 </style>
 <template lang="pug">
-.button-container
+.button-container(@click="$emit('click')")
   slot
 </template>

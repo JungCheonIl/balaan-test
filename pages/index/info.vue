@@ -51,11 +51,13 @@
   .group
     .label 이름
     main-input(
+      v-model="name"
       placeholder="이름을 입력해주세요"
     )
   .group
     .label 연락처
     main-input(
+      v-model="number"
       placeholder="연락처를 입력해주세요"
     )
   .group
@@ -64,19 +66,29 @@
       @click="juso"
     ) 우편번호
   main-input.input(
+    v-model="post"
     disabled
     placeholder="주소를 검색해주세요"
   )
   main-input(
+    v-model="postDetail"
     placeholder="상세주소를 입력해주세요"
   )
   .button-group
-    main-button.button 이전
+    main-button.button(@click="$router.go(-1)") 이전
     main-button.button 다음
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      name: '',
+      number: '',
+      post: '',
+      postDetail: '',
+    };
+  },
   methods: {
     juso() {
       new daum.Postcode({
